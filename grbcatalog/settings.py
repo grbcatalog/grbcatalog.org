@@ -5,7 +5,7 @@ import os
 os.environ['HOME']='/tmp'
 
 import os.path
-import grbcatalog.secrets as secrets
+import secrets as secrets
 
 
 DEBUG = True

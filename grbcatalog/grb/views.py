@@ -554,7 +554,7 @@ def histo(request):
     #import numpy as np
     #x = np.random.randn(1000)
     num_points = len(x)
-    sample_size_str = " (Number of GRB: " + str(num_points) + ")"
+    sample_size_str = " (Number of GRBs: " + str(num_points) + ")"
 
     if (x_log == 'True'):
         if len(unit) > 1:
@@ -806,7 +806,7 @@ def corr_plot(request):
             y_label = request.GET.get('y_label', type_id_02)
 
     num_points = len(x)
-    sample_size_str = " (Number of GRB: " + str(num_points) + ")"
+    sample_size_str = " (Number of GRBs: " + str(num_points) + ")"
 
     title = request.GET.get('title', 'Correlation Plot') + sample_size_str
 
