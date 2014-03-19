@@ -1113,7 +1113,6 @@ def plot_3d(request):
 
     return response
 
-
 def help_page(request):
 
     help_topic = request.GET.get('help_topic', 'grb_catalog_main_help')
@@ -1127,6 +1126,34 @@ def help_page(request):
 
     return render_to_response('help_page.html', {'title': title_str,
                                                  'description': description_str,
+    })
+
+def grb_page(request):
+
+    grb_name = request.GET.get('grb_name', '')
+
+    grb_entry = grb.objects.filter(grb_name = grb_name)
+    m_data = measurement.objects.filter(grb_name = grb_entry).order_by('measurement_type')
+
+    measurement_data = []
+
+    for item in m_data:
+        mea_row = []
+        mea_row.append(item.measurement_type.measurement_type_name)
+        if item.measurement_type.data_type == 'FLOAT':
+            mea_row.append(item.value)
+        if item.measurement_type.data_type == 'TEXT':
+            mea_row.append(item.text)
+        if item.measurement_type.data_type == 'DATE':
+            mea_row.append(item.date)
+        mea_row.append(item.measurement_id)
+        measurement_data.append(mea_row)
+
+    #print measurement_data
+    #import ipdb; ipdb.set_trace() # debugging code
+
+    return render_to_response('grb_page.html', {'grb_name': grb_name,
+                                                 'measurement_data': measurement_data,
     })
 
 # This is an example code

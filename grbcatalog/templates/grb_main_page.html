@@ -151,7 +151,11 @@
     {% for item_row in grb_data %}
     <tr class={% cycle 'row1' 'row2' %}>
     {% for item in item_row %}
-    <td>{{ item }}</td>
+        {% if forloop.counter == 1 %}
+            <td> <a href="{%url 'grb_page'%}?grb_name={{item}}"  target="_blank">{{ item }}</a> </td>
+        {% else %}
+            <td>{{ item }}</td>
+        {% endif %}
     {% endfor %}
     </tr>
     {% endfor %}

@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^plot_3d$', 'grbcatalog.grb.views.plot_3d', name='plot_3d'),
     url(r'^plot_3d_page$', 'grbcatalog.grb.views.plot_3d_page', name='plot_3d_page'),
     url(r'^help_page$', 'grbcatalog.grb.views.help_page', name='help_page'),
+    url(r'^grb_page$', 'grbcatalog.grb.views.grb_page', name='grb_page'),
     # Examples:
     # url(r'^$', 'grbcatalog.views.home', name='home'),
     # url(r'^grbcatalog/', include('grbcatalog.foo.urls')),
