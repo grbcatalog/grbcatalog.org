@@ -52,6 +52,7 @@ grb_ = cPickle.load(data_file2)
 data_file2.close()
 """
 
+
 #import ipdb; ipdb.set_trace() # debugging code
 grb_data_table = []
 
@@ -94,6 +95,12 @@ data_file.close()
 data_file2 = open('grb_data.dat', 'rb')
 grb_data_table2 = cPickle.load(data_file2)
 data_file2.close()
+
+"""
+for item in grb_data_table2:
+    print item
+    import ipdb; ipdb.set_trace() # debugging code
+"""""
 
 #import ipdb; ipdb.set_trace() # debugging code
 #print grb_data_table2

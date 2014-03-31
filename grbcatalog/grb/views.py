@@ -281,6 +281,11 @@ def get_grb_sample(request):
     data_file = open(grb_data_file, 'rb')
     grb_data_table = cPickle.load(data_file)
     data_file.close()
+
+    #for item in grb_data_table:
+    #    print item
+    #    import ipdb; ipdb.set_trace() # debugging code
+
     #import ipdb; ipdb.set_trace() # debugging code
     #print grb_data_table
 
@@ -1141,7 +1146,7 @@ def grb_page(request):
         mea_row = []
         mea_row.append(item.measurement_type.measurement_type_name)
         if item.measurement_type.data_type == 'FLOAT':
-            mea_row.append(item.value)
+            mea_row.append(str(item.value) + " " + str(item.measurement_type.units))
         if item.measurement_type.data_type == 'TEXT':
             mea_row.append(item.text)
         if item.measurement_type.data_type == 'DATE':
