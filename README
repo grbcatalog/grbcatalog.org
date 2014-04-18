@@ -5,6 +5,7 @@ grbcatalog.org
 ===================================================================
 
 1. Overview
+
 grbcatalog.org is an open source web application dedicated to 
 Gamma Ray Burst (GRB) studies. The data and the source code are 
 freely available in this repository for anyone to either contribute 
@@ -26,7 +27,7 @@ management system supported by django.
 
 2.Description
 
-The basic philosophy behind the design of grbcatalog web 
+The basic philosophy behind the design of grbcatalog.org web 
 application is to limit client side requirements to minimum. 
 Thereby allowing users with wide variety of devices to access 
 and use the web application. There can be multiple instances 
